@@ -1,4 +1,5 @@
 ﻿using CantaBank.Funcionarios;
+using GerenciadorBonificacao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,16 +15,21 @@ namespace CantaBank
     {
         static void Main(string[] args)
         {
-            Funcionario Carlos = new Funcionario();
+            GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();  
 
+            Funcionario Carlos = new Funcionario();
             Carlos.Nome = "Carlos";
             Carlos.CPF = "546.879.157-20";
             Carlos.Salario = 2000;
+
+            gerenciador.Registrar(Carlos);
 
             Diretor Roberta = new Diretor();
             Roberta.Nome = "Roberta";
             Roberta.CPF = "454.658.148-3";
             Roberta.Salario = 5000;
+
+            
 
 
             Console.WriteLine(Carlos.Nome);
@@ -31,6 +37,9 @@ namespace CantaBank
 
             Console.WriteLine(Roberta.Nome);
             Console.WriteLine(Roberta.GetBonificacao());
+
+
+            Console.WriteLine("Totalde Bonificações: " + gerenciador.GetTotalBonificacao());
 
             Console.ReadLine(); 
         }
