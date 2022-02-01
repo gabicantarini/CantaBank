@@ -6,22 +6,23 @@ using System.Threading.Tasks;
 
 namespace CantaBank.Funcionarios
 {
-    public class Diretor : Funcionario
+    public class Auxiliar : Funcionario
     {
-        public Diretor(string cpf) : base(5000, cpf)
+
+        public Auxiliar(string cpf) : base(3000, cpf)
         {
 
         }
 
         public override void AumentarSalario()
         {
-      
-            Salario *= 1.15;
+
+            Salario *= 1.01;
         }
 
         public override double GetBonificacao()
         {
-            return Salario * 0.5;
+            return Salario * 0.20;
         }
     }
 }
