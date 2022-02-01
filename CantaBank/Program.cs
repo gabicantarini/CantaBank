@@ -1,11 +1,10 @@
 ﻿using CantaBank.Funcionarios;
-using GerenciadorBonificacao;
+using static CantaBank.GerenciadorBonificacao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 
 
 
@@ -17,26 +16,38 @@ namespace CantaBank
         {
             GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();  
 
-            Funcionario Carlos = new Funcionario();
-            Carlos.Nome = "Carlos";
-            Carlos.CPF = "546.879.157-20";
-            Carlos.Salario = 2000;
+            Funcionario carlos = new Funcionario(2000, "546.879.157-20");
+            carlos.Nome = "Carlos";
+           
 
-            gerenciador.Registrar(Carlos);
+            carlos.AumentarSalario();
+            Console.WriteLine("Novo Salário " + carlos.Salario);
 
-            Diretor Roberta = new Diretor();
-            Roberta.Nome = "Roberta";
-            Roberta.CPF = "454.658.148-3";
-            Roberta.Salario = 5000;
+            Console.WriteLine(Funcionario.TotalDeFuncionarios);
 
-            
+            gerenciador.Registrar(carlos);
+
+            Diretor roberta = new Diretor("454.658.148-3");
+            roberta.Nome = "Roberta";
+           
+
+            Console.WriteLine(roberta.CPF);
+            Console.WriteLine(Funcionario.TotalDeFuncionarios);
+
+            Funcionario robertaTeste = roberta;
+
+            roberta.AumentarSalario();
+            Console.WriteLine("Novo salário " + roberta.Salario);
+
+            Console.WriteLine("Bonificação Diretor: " + roberta.GetBonificacao());
+            Console.WriteLine("Bonificação Diretor: " + robertaTeste.GetBonificacao());
 
 
-            Console.WriteLine(Carlos.Nome);
-            Console.WriteLine(Carlos.GetBonificacao());
+            Console.WriteLine(carlos.Nome);
+            Console.WriteLine(carlos.GetBonificacao());
 
-            Console.WriteLine(Roberta.Nome);
-            Console.WriteLine(Roberta.GetBonificacao());
+            Console.WriteLine(roberta.Nome);
+            Console.WriteLine(roberta.GetBonificacao());
 
 
             Console.WriteLine("Totalde Bonificações: " + gerenciador.GetTotalBonificacao());

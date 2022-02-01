@@ -6,15 +6,22 @@ using System.Threading.Tasks;
 
 namespace CantaBank.Funcionarios
 {
-    internal class Diretor
+    public class Diretor : Funcionario
     {
-        public string Nome { get; set; }
-        public string CPF { get; set; }
-        public double Salario { get; set; }
-
-        public double GetBonificacao()
+        public Diretor(string cpf) : base(5000, cpf)
         {
-            return Salario;
+
+        }
+
+        public override void AumentarSalario()
+        {
+      
+            Salario *= 1.15;
+        }
+
+        public override double GetBonificacao()
+        {
+            return Salario + base.GetBonificacao();
         }
     }
 }
