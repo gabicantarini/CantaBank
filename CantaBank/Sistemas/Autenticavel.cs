@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace CantaBank.Sistemas
 {
-    public interface Autenticavel
+    public interface IAutenticavel
     {
         public string Senha { get; set; }
 
-        public bool Autenticavel(string senha)
+        bool Autenticavel(string senha);
             
-        {
-            return Senha == senha;
-        }
-
+        
     }
 }
