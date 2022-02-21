@@ -11,7 +11,7 @@ namespace CantaBank.Sistemas
     {
         public bool Logar(Funcionario funcionario, string senha)
         {
-            bool usuarioAutenticado = funcionarioAutenticar(senha);
+            bool usuarioAutenticado = funcionario.Autenticar(senha);
 
             if(usuarioAutenticado)
             {
