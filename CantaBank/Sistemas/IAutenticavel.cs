@@ -8,10 +8,7 @@ namespace CantaBank.Sistemas
 {
     public interface IAutenticavel
     {
-        public string Senha { get; set; }
-
         bool Autenticavel(string senha);
-            
-        
+        bool Autenticar(string senha);
     }
 }
