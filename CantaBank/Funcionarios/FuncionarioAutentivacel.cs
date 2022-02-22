@@ -21,5 +21,6 @@ namespace CantaBank.Funcionarios
         {
             return Senha == senha;
         }
+
     }
 }

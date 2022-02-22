@@ -16,6 +16,8 @@ namespace CantaBank.Funcionarios
 
         public Funcionario(double salario, string cpf)
         {
+            Console.WriteLine("Criando FUNCIONÁRIO");
+
             CPF = cpf;
             Salario = salario;
             TotalDeFuncionarios++;

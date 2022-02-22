@@ -17,7 +17,6 @@ namespace CantaBank.Funcionarios
 
         public override void AumentarSalario()
         {
-
             Salario *= 1.05;
         }
 
